@@ -52,18 +52,17 @@ option(LLAMA_SUPPORT "Enable llama.cpp support" ON)
 option(LLAMA_CUBLAS "Enable CUDA support (requires NVIDIA GPU)" OFF)
 option(LLAMA_METAL "Enable Metal support (requires Apple Silicon)" OFF)
 
-# llama.cpp 源文件路径
-set(LLAMA_DIR ${CMAKE_SOURCE_DIR}/third_party)
+# llama.cpp 源文件路径（workflow 下载到当前目录）
+set(LLAMA_DIR ${CMAKE_SOURCE_DIR})
 
-# 如果使用完整llama.cpp源码，取消以下注释并设置正确的源文件列表
-# 当前使用简化版头文件，仅用于接口定义
+# llama.cpp 核心源文件
 set(LLAMA_SOURCES
     # 核心文件 - 从llama.cpp仓库获取
-    # ${LLAMA_DIR}/llama.cpp
-    # ${LLAMA_DIR}/ggml.c
-    # ${LLAMA_DIR}/ggml-alloc.c
-    # ${LLAMA_DIR}/ggml-backend.c
-    # ${LLAMA_DIR}/ggml-quants.c
+    ${LLAMA_DIR}/llama.cpp
+    ${LLAMA_DIR}/ggml.c
+    ${LLAMA_DIR}/ggml-alloc.c
+    ${LLAMA_DIR}/ggml-backend.c
+    ${LLAMA_DIR}/ggml-quants.c
 )
 
 # 定义 llama.cpp 编译选项
