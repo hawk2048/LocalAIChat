@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LocalAI Chat</string>
+    <string name="settings">设置</string>
+    <string name="model_management">模型管理</string>
+    <string name="clear_history">清除历史</string>
+    <string name="no_model_loaded">未加载模型</string>
+    <string name="import_model">导入模型</string>
+    <string name="delete_model">删除模型</string>
+    <string name="model_info">模型信息</string>
+    <string name="temperature">温度</string>
+    <string name="max_tokens">最大Token数</string>
+    <string name="dark_mode">深色模式</string>
+    <string name="about">关于</string>
+    <string name="version">版本</string>
+    <string name="send">发送</string>
+    <string name="input_hint">输入消息...</string>
+    <string name="generating">生成中...</string>
+    <string name="error_model_not_loaded">模型未加载，请先导入模型</string>
+    <string name="error_generation_failed">生成失败</string>
+</resources>
