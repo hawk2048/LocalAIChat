@@ -43,6 +43,19 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       
+    - name: Download llama.cpp
+      run: |
+        echo "Downloading llama.cpp..."
+        mkdir -p app/src/main/cpp
+        cd app/src/main/cpp
+        # Download specific llama.cpp release
+        LLAMA_VERSION="b2688"
+        curl -L -o llama.cpp.tar.gz "https://github.com/ggerganov/llama.cpp/archive/refs/tags/${LLAMA_VERSION}.tar.gz"
+        tar -xzf llama.cpp.tar.gz --strip-components=1
+        rm llama.cpp.tar.gz
+        echo "llama.cpp downloaded successfully"
+        ls -la
+        
     - name: Build Debug APK
       run: ./gradlew assembleDebug --no-daemon
       env:
